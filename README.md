@@ -51,10 +51,11 @@ The current version folds together all earlier modernization work and update rep
 
 ```text
 portfolio/
+|- public/
+|  |- raj_circle.png
 |- src/
 |  |- Assets/
 |  |  |- images/
-|  |  |- raj_circle.png
 |  |  `- Rajnish_BTech_CSE_2023_GenAI.pdf
 |  |- components/
 |  |  |- About.jsx
@@ -160,11 +161,11 @@ Edit the design tokens in `src/index.css`. The file already includes separate to
 
 ## Assets
 
-Static assets are located in `src/Assets/`.
+Static assets are located in `src/Assets/` and the favicon is in `public/`.
 
 Current assets include:
 
-- `src/Assets/raj_circle.png`
+- `public/raj_circle.png` (favicon)
 - `src/Assets/Rajnish_BTech_CSE_2023_GenAI.pdf`
 - images inside `src/Assets/images/`
 

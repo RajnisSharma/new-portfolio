@@ -1,23 +1,26 @@
 import { useState } from 'react'
 import { PROJECTS } from '../constants'
 
-const PER_PAGE = 4
-const ELLIPSIS = 'ellipsis'
+const PER_PAGE = 3
 
 function getVisiblePages(currentPage, totalPages) {
-  if (totalPages <= 5) {
+  // Show maximum 3 page numbers
+  if (totalPages <= 3) {
     return Array.from({ length: totalPages }, (_, index) => index + 1)
   }
 
-  if (currentPage <= 3) {
-    return [1, 2, 3, ELLIPSIS, totalPages]
+  // Middle case: show current page with neighbors
+  if (currentPage > 1 && currentPage < totalPages) {
+    return [currentPage - 1, currentPage, currentPage + 1]
   }
 
-  if (currentPage >= totalPages - 2) {
-    return [1, ELLIPSIS, totalPages - 2, totalPages - 1, totalPages]
+  // At start: show 1, 2, 3
+  if (currentPage === 1) {
+    return [1, 2, 3]
   }
 
-  return [1, ELLIPSIS, currentPage - 1, currentPage, currentPage + 1, ELLIPSIS, totalPages]
+  // At end: show last 3 pages
+  return [totalPages - 2, totalPages - 1, totalPages]
 }
 
 export default function Projects() {
@@ -73,23 +76,17 @@ export default function Projects() {
           >
             Back
           </button>
-          {paginationItems.map((item, index) => (
-            item === ELLIPSIS ? (
-              <span key={`${item}-${index}`} className="page-ellipsis" aria-hidden="true">
-                ...
-              </span>
-            ) : (
-              <button
-                key={item}
-                type="button"
-                className={`page-btn ${page === item ? 'active' : ''}`}
-                onClick={() => setPage(item)}
-                aria-label={`Page ${item}`}
-                aria-current={page === item ? 'page' : undefined}
-              >
-                {item}
-              </button>
-            )
+          {paginationItems.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={`page-btn ${page === item ? 'active' : ''}`}
+              onClick={() => setPage(item)}
+              aria-label={`Page ${item}`}
+              aria-current={page === item ? 'page' : undefined}
+            >
+              {item}
+            </button>
           ))}
           <button
             type="button"

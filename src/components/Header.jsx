@@ -68,6 +68,11 @@ export default function Header({ voiceEnabled, setVoiceEnabled, themeMode, setTh
         </div>
       </header>
 
+      <div 
+        className={`mobile-menu-overlay ${open ? 'open' : ''}`} 
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
       <nav className={`mobile-menu ${open ? 'open' : ''}`}>
         {NAV_LINKS.map(l => (
           <a key={l} href={`#${l}`} onClick={closeMenu}>
