@@ -51,11 +51,11 @@ The current version folds together all earlier modernization work and update rep
 
 ```text
 portfolio/
-|- public/
-|  |- Images/
-|  |- raj_circle.png
-|  `- Resume_06_2025.pdf
 |- src/
+|  |- Assets/
+|  |  |- images/
+|  |  |- raj_circle.png
+|  |  `- Rajnish_BTech_CSE_2023_GenAI.pdf
 |  |- components/
 |  |  |- About.jsx
 |  |  |- Contact.jsx
@@ -63,7 +63,7 @@ portfolio/
 |  |  |- Header.jsx
 |  |  |- Home.jsx
 |  |  |- PageLoader.jsx
-|  |  |- Portfolio.jsx
+|  |  |- Projects.jsx
 |  |  |- ScrollProgress.jsx
 |  |  |- ScrollToTop.jsx
 |  |  |- Services.jsx
@@ -127,6 +127,8 @@ npm run preview
 - `npm run dev`: Start the Vite development server.
 - `npm run build`: Create a production build in `dist/`.
 - `npm run preview`: Preview the built app locally.
+- `npm run predeploy`: Build the project before deploying to GitHub Pages.
+- `npm run deploy`: Deploy the `dist/` folder to GitHub Pages.
 
 ## Data and Content Customization
 
@@ -158,13 +160,13 @@ Edit the design tokens in `src/index.css`. The file already includes separate to
 
 ## Assets
 
-Static assets are served from `public/`.
+Static assets are located in `src/Assets/`.
 
-Current public assets include:
+Current assets include:
 
-- `public/raj_circle.png`
-- `public/Resume_06_2025.pdf`
-- images inside `public/Images/`
+- `src/Assets/raj_circle.png`
+- `src/Assets/Rajnish_BTech_CSE_2023_GenAI.pdf`
+- images inside `src/Assets/images/`
 
 Some project cards intentionally fall back to an icon if the referenced image cannot be loaded.
 
