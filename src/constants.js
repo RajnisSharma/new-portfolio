@@ -57,7 +57,7 @@ export const PROJECTS = [
     image: null,
     icon: 'bx-file',
     desc: 'AI-powered resume matcher that extracts skills and matches them to job descriptions.',
-    link: '#',
+    link: 'https://github.com/RajnisSharma/resume-matcher',
     tags: ['Python', 'Django', 'AI'],
   },
   {
@@ -66,7 +66,7 @@ export const PROJECTS = [
     image: null,
     icon: 'bx-chat',
     desc: 'Chat with a virtual assistant powered by LangChain, OpenAI, and Hugging Face.',
-    link: 'https://rajnish.pythonanywhere.com/',
+    link: 'https://github.com/RajnisSharma/rag-ai-assistant',
     tags: ['Python', 'LangChain', 'OpenAI', 'Hugging Face'],
   },
   {
